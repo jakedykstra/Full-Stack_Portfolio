@@ -9,7 +9,7 @@ class Work extends Component {
 
   state = {
     mainProjectName: "DayWon",
-    allProjects: ["DayWon", "Crypto Market Simulator", "News Webscraper", "FlashCard Chrome Extension", "Millenial Budget"]
+    allProjects: ["DayWon", "Crypto Market Simulator", "Juggernaut Native App", "FlashCard Chrome Extension", "Millenial Budget"]
   }
     
   newProjectMain = (project) => {
@@ -25,6 +25,12 @@ class Work extends Component {
       return "active"
     } else {
       return
+    }
+  }
+
+  isPage = () => {
+    if (projectData[this.state.mainProjectName].pageLink) {
+      return <a className="project-page-anchor" target="_blank" href="projectData[this.state.mainProjectName].pageLink">Project</a>
     }
   }
 
@@ -52,7 +58,7 @@ class Work extends Component {
           <div className="projects__main">
             <img src={image} alt="Screenshot of main project" className="screenshot"/>
             <div className="projects__main--text">
-              <div className="main-project-name"><strong>{this.state.mainProjectName}</strong> <a href="#">Github</a></div>
+              <div className="main-project-name"><strong>{this.state.mainProjectName}</strong> <a target="_blank" href={projectData[this.state.mainProjectName].link}>Github</a> {"   "}{this.isPage()}</div>
               <div className="languages"><em>{projectData[this.state.mainProjectName].lang}</em></div>
               <div className="description">{projectData[this.state.mainProjectName].desc}</div>
             </div>
@@ -66,9 +72,9 @@ class Work extends Component {
             <div className="project-name"><strong>Crypto Market Simulator</strong></div>
               <div className="project-languages"><em>React, Axios, Node, Sequelize, MySql, PassportJS, D3, Heroku</em></div>
             </div>
-            <div className="projects__lists--box" id={this.isActive("News Webscraper")} onClick={() => this.newProjectMain("News Webscraper")}>
-            <div className="project-name"><strong>News Webscraper</strong></div>
-              <div className="project-languages"><em>React, Axios, Node, MongoDb/Mongoose, Cheerio, Heroku</em></div>
+            <div className="projects__lists--box" id={this.isActive("Juggernaut Native App")} onClick={() => this.newProjectMain("Juggernaut Native App")}>
+            <div className="project-name"><strong>Juggernaut Native App</strong></div>
+              <div className="project-languages"><em>React/Redux, React Native, Axios, Node, MongoDb/Mongoose, Heroku</em></div>
             </div>
             <div className="projects__lists--box" id={this.isActive("FlashCard Chrome Extension")} onClick={() => this.newProjectMain("FlashCard Chrome Extension")}>
             <div className="project-name"><strong>FlashCard Chrome Extension</strong>(In Progress)</div>

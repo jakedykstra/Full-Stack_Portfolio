@@ -22,7 +22,6 @@ class Footer extends Component {
   }
 
   render() {
-    console.log(this.props);
     return (
         <footer className="footer">
         <div className="quote">{this.whichQuote()}</div>

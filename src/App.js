@@ -15,7 +15,9 @@ class App extends Component {
       <div>
         <BrowserRouter>
             <div className="container">
-              <Navbar />
+              <Route render={(props) => {
+                  console.log(props.location)
+                  return <Navbar location={props.location}/> }} />
               <Switch>
                 <Route exact path="/" component={Landing} />
                 <Route exact path="/bio" component={Bio} />                

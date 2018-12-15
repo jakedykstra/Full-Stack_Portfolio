@@ -11,7 +11,7 @@ class Landing extends Component {
             MY NAMES JAKE AND I'M A FULL-STACK DEVELOPER
           </div>
           <div className="sub">
-            React, SQL, .NET, Docker - You name it and I'll build with it.
+            React, MySQL, GraphQL, Docker, ... - You name it and I'll build with it.
           </div>
         </div>
         <Footer comp={"Landing"}/>

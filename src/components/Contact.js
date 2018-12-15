@@ -24,7 +24,7 @@ class Contact extends Component {
                                 </div>
 
                                 <div className="form__group">
-                                    <textarea className="form__textarea" rows="4" placeholder="Reason for contact"></textarea> 
+                                    <textarea className="form__textarea" rows="4" placeholder="Reason for contact" required /> 
                                     <label for="message" className="form__label">Message</label>                       
                                 </div>
 

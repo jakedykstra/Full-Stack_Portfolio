@@ -73,26 +73,39 @@ code {
 
 .nav__user-nav a:hover{
   text-decoration: none;
+  font-size: 1.5rem;
   color: var(--color-primary);
+  /* border-bottom: var(--color-primary) 3px solid; */
 }
-
+/* 
 .nav__user-nav a:active{
   text-decoration: none;
+  font-size: 1.5rem;
+  color: var(--color-secondary);
+  border-bottom: var(--color-secondary) 3px solid;
+} */
+
+/* .nav__user-nav a:active{
+  text-decoration: none;
+  color: var(--color-grey-light-1);
+} */
+
+.active-view {
+  font-size: 1.5rem;
   color: var(--color-primary);
+  border-bottom: var(--color-primary) 3px solid;
 }
 
 .nav__user-nav--left {
   display: flex;
   justify-content: space-between;
-  width: 25%;
+  width: 300px;
 }
-
-
 
 .nav__user-nav--right {
   display: flex;
   justify-content: space-between;
-  width: 25%;
+  width: 300px;
 }
 
 .nav__logo {
@@ -102,12 +115,39 @@ code {
   transform: translate(-50%, -50%);
 } 
 
-@media only screen and (max-width: 800px) {
-  .nav__logo {
+@media only screen and (max-width: 850px) {
+  /* .nav__logo {
     top: 10%;
     left: 50%;
+  } */
+
+  .nav__user-nav a{
+    font-size: 1rem;
+  }
+
+  .nav__user-nav--left, .nav__user-nav--right {
+    width: 200px;
+    flex-basis: 1;
   }
 }
+
+@media only screen and (max-width: 450px) {
+  /* .nav__logo {
+    top: 10%;
+    left: 50%;
+  } */
+
+  .nav__user-nav a{
+    font-size: .7rem;
+  }
+
+  .nav__user-nav--left, .nav__user-nav--right {
+    width: 150px;
+    flex-basis: 1;
+  }
+}
+
+
 
 .bg-video {
   position: absolute;
@@ -208,7 +248,7 @@ Landing ---------------------------------------------------------- */
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  font-size: 1rem;
+  font-size: .9rem;
   background-color: rgba(246, 246, 246, 0.805);
   border: var(--color-primary) 3px solid;
   color: var(--color-secondary);
@@ -268,6 +308,21 @@ Landing ---------------------------------------------------------- */
    transform: translate(-50%, -50%);
 }
 
+
+@media only screen and (max-width: 450px) {
+  .card-bio {
+    font-size: .9rem;
+  }
+
+  #card__bio--personal-bio {
+    font-size: .8rem;
+  }
+
+  .card__contents {
+    flex-direction: column;
+  }
+}
+
 /* contact ------------------------------------------------------------------------ */
 
 .contact__form {
@@ -305,27 +360,28 @@ Landing ---------------------------------------------------------- */
       transition: all .3s;
     }
 
-    .form::placeholder {
+    .form__group::placeholder {
       color: var(--color-secondary);
     }
 
 
       .form__input:focus, .form__textarea:focus {
           outline: none;
-          box-shadow: 0 1rem 2rem rgba(var(--color-grey-dark-1), .1);
+          box-shadow: 0 1rem 2rem rgba(var(--color-secondary), .1);
           border-bottom: 3px solid var(--color-primary);
       }
 
       .form__input:focus:invalid, .form__textarea:focus:invalid {
-          border-bottom: 3px solid var(--color-grey-dark-1);
+          border-bottom: 3px solid var(--color-secondary);
       }
 
       .form__input::-webkit-input-placeholder {
-          color: var(--color-grey-dark-1);
+          color: var(--color-secondary);
       }
 
 
   .form__label {
+      color: var(--color-secondary);
       font-size: 0.7rem;
       font-weight: 700;
       margin-left: 2rem;
@@ -341,7 +397,7 @@ Landing ---------------------------------------------------------- */
       transform: translateY(-4rem);
   }
   
-  .form__group textarea:placeholder-shown + .form__label  {
+  .form__textarea:placeholder-shown + .form__label  {
       opacity: 0;
       visibility: hidden;
       transform: translateY(-4rem);
@@ -486,6 +542,7 @@ Landing ---------------------------------------------------------- */
       height: 100vh;
       margin-top: 20%;
       margin-bottom: 15%;
+      font-size: .8rem;
     }
     .projects__lists--box {
       border-left: none;
