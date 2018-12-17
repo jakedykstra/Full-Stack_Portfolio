@@ -10,7 +10,7 @@ class Languages extends Component {
       <React.Fragment>
       <div>
       <div className="card">
-          <div className="languages">
+          <div className="languages__card">
             <div className="languages__list">
               <div className="language-title"><strong>Front-End</strong></div>
               <div><i className="devicon-react-plain"></i> React/Redux</div>

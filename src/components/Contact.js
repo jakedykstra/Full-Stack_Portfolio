@@ -12,16 +12,18 @@ class Contact extends Component {
                                         Contact me.
                                     </h2>
                                 </div>
+                            <div className="top-input">
+                                <div className="form__group first-input inputs-group">
+                                        <input type="text" className="form__input" placeholder="Full name" id="name" required />
+                                        <label for="name" className="form__label">Full name</label>
+                                    </div>
 
-                                <div className="form__group inputs-group">
-                                    <input type="text" className="form__input" placeholder="Full name" id="name" required />
-                                    <label for="name" className="form__label">Full name</label>
-                                </div>
+                                    <div className="form__group inputs-group">
+                                        <input type="email" className="form__input" placeholder="Email address" id="email" required />
+                                        <label for="email" className="form__label">Email address</label>
+                                    </div>
+                            </div>
 
-                                <div className="form__group inputs-group">
-                                    <input type="email" className="form__input" placeholder="Email address" id="email" required />
-                                    <label for="email" className="form__label">Email address</label>
-                                </div>
 
                                 <div className="form__group">
                                     <textarea className="form__textarea" rows="4" placeholder="Reason for contact" required /> 

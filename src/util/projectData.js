@@ -1,8 +1,10 @@
 const projectData = {
   DayWon: {
     desc: "Web & mobile application for implementing top powerlifting programs into your workouts. Tracks performance and improvements.",
-    lang: "React/Redux, MongoDb/Mongoose, Node/Express, React Native, PassportJS, D3",
-    link: "https://github.com/a2sandoval/DayWon"
+    lang: "React/Redux, MongoDb/Mongoose, Node/Express, React Native, PassportJS, ChartsJS, (GraphQL/Apollo In Progress)",
+    link: "https://github.com/a2sandoval/DayWon",
+    pageLink: "https://daywon.herokuapp.com",
+    image: "../style/DayWon.png"
   },
   "Crypto Market Simulator": {
     desc: "Web application simulates having $10,000 to use on the crypto market. Track your purchases and your net profit.",

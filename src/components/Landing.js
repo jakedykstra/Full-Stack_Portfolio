@@ -8,10 +8,10 @@ class Landing extends Component {
       <React.Fragment>
         <div className="landing">
           <div className="header">
-            MY NAMES JAKE AND I'M A FULL-STACK DEVELOPER
+            My NAMES JAKE AND I'M A JUNIOR FULL-STACK DEVELOPER
           </div>
           <div className="sub">
-            React, MySQL, GraphQL, Docker, ... - You name it and I'll build with it.
+            Let's build something new.
           </div>
         </div>
         <Footer comp={"Landing"}/>

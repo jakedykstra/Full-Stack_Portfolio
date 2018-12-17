@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-import logo from '../style/DevByJakeLogo.png';
+import logo from '../style/Logo.png';
 import video from '../style/Golden_Gate_Traffic.mp4';
 import video_image from '../style/Golden_Gate_Traffic.jpg';
-import { Document } from 'react-pdf';
-import resume from "../style/resume.pdf.pdf";
+import resume from "../style/resume.pdf";
 
 class Navbar extends Component {
 
       state = {
-            clicked: false
+            clicked: false,
       }
 
   isActiveView = (path) => {
@@ -19,28 +18,13 @@ class Navbar extends Component {
         }
   }
 
-  renderPDF = () => {
-        console.log("clicked");
-      this.setState({
-            clicked: true
-      })
-  }
-
-  renderResume = () => {
-        if (this.state.clicked === true) {
-            return (
-                  <div>
-            <Document
-              file={resume}
-            >
-            </Document>
-          </div>
-            )
-        }
-        else {
-              return null
-        }
-
+  windowWidth = () => {
+        console.log(window.innerWidth);
+      if(window.innerWidth > 500) {
+            return "40";
+      } else {
+            return "68";
+      }
   }
 
   render() {
@@ -67,12 +51,12 @@ class Navbar extends Component {
                                 <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/jacob-dykstra/">LinkedIn.</a>
                           </span>
                           <span>
-                                <button onClick={() => this.renderPDF()}>Resume.{this.renderResume()}</button>
+                          <a href={resume} target='_blank' rel="noopener noreferrer">Resume. </a>
                           </span>
                         </div>
                   </nav>
                   <div className="nav__logo">
-                        <Link to="/"><img src={logo} alt="DevByJake Logo"></img></Link>
+                        <Link to="/"><img src={logo} alt="DevByJake Logo" height={this.windowWidth()}></img></Link>
                   </div>
                   <div className="bg-video">                  
                         <video className="bg-video__content" autoPlay muted loop>
@@ -81,6 +65,7 @@ class Navbar extends Component {
                         Your browser is not supported!
                     </video>
                   </div>
+                  <div className="background-box"/>
 
         </nav>
     );
