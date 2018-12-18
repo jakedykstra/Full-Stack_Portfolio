@@ -9,7 +9,7 @@ class Work extends Component {
 
   state = {
     mainProjectName: "DayWon",
-    allProjects: ["DayWon", "Crypto Market Simulator", "Research Scraper", "FlashCard Chrome Extension", "My Port"]
+    allProjects: ["DayWon", "Crypto Market Simulator", "Research Scraper", "FlashCard Chrome Extension", "DevByJake"]
   }
 
   projectImg = () => {
@@ -91,17 +91,17 @@ class Work extends Component {
               <div className="project-name"><strong>Crypto Market Simulator</strong></div>
                 <div className="project-languages"><em>React, Axios, Node, Sequelize, MySql, PassportJS, D3, Heroku</em></div>
               </div>
-              <div className="projects__lists--box" id={this.isActive("Juggernaut Native App")} onClick={() => this.newProjectMain("Juggernaut Native App")}>
-              <div className="project-name"><strong>Juggernaut Native App</strong></div>
-                <div className="project-languages"><em>React/Redux, React Native, Axios, Node, MongoDb/Mongoose, Heroku</em></div>
+              <div className="projects__lists--box" id={this.isActive("Research Scraper")} onClick={() => this.newProjectMain("Research Scraper")}>
+              <div className="project-name"><strong>Research Scraper</strong></div>
+                <div className="project-languages"><em>Puppeteer, CheerioJS, NodeJS/Express</em></div>
               </div>
               <div className="projects__lists--box" id={this.isActive("FlashCard Chrome Extension")} onClick={() => this.newProjectMain("FlashCard Chrome Extension")}>
               <div className="project-name"><strong>FlashCard Chrome Extension</strong>(In Progress)</div>
                 <div className="project-languages"><em>React/Redux, Mongodb/Mongoose, Node/Express</em></div>
               </div>
-              <div className="projects__lists--box" id={this.isActive("Millenial Budget")} onClick={() => this.newProjectMain("Millenial Budget")}>
-              <div className="project-name"><strong>Millenial Budget</strong>(In Progress)</div>
-                <div className="project-languages"><em>C#, ASP.NET MVC5, Access, MySQL,  Docker, Kubernetes</em></div>
+              <div className="projects__lists--box" id={this.isActive("DevByJake")} onClick={() => this.newProjectMain("DevByJake")}>
+              <div className="project-name"><strong>DevByJake</strong></div>
+                <div className="project-languages"><em>React, NodeJS/Express, MongoDb, Emailer </em></div>
               </div>
           </div>
         </div>
