@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import downarrow from '../style/downarrow.png';
-import Footer from "./Footer";
 import firebase from "../style/firebase-icon.svg";
 
 class Languages extends Component {
@@ -69,7 +68,6 @@ class Languages extends Component {
             </div>
           </div>
         </div>
-        <Footer comp={"Languages"}/>
       </React.Fragment>
     )
   }

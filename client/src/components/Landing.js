@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Footer from "./Footer"
 
 class Landing extends Component {
   render() {
@@ -14,7 +13,6 @@ class Landing extends Component {
             Let's build something new.
           </div>
         </div>
-        <Footer comp={"Landing"}/>
       </React.Fragment>
     )
   }

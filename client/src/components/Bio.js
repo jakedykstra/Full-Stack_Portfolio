@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import bio_pic from "../style/jake_greyscale.jpg";
-import Footer from "./Footer"
 
 class Bio extends Component {
   render() {
     return (
-      <React.Fragment>
       <div className="card">
           <h2 className="card__head">Brief Career Bio.</h2>
             <div className="card__contents">
@@ -29,11 +27,10 @@ class Bio extends Component {
                 <li>I Worked for a michelin star restaurant where I learned there’s more to life than pizza and hamburgers. </li>
                 <li>I love to learn new things</li>
               </ul>
-      </div>
+        </div>
       </div>
     </div>
-       <Footer comp={"Bio"}/>
-      </React.Fragment>
+
     );
   }
 }

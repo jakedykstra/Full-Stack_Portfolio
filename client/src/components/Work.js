@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import downarrow from '../style/downarrow.png';
-import Footer from "./Footer";
 import DayWonImg from "../style/images/DayWon.png";
 import projectData from "../util/projectData";
 // import crypMarkImg from "../style/images/CryptoMarketSim.png";
@@ -106,7 +105,6 @@ class Work extends Component {
           </div>
         </div>
         </div>
-        <Footer comp={"Work"}/>
       </React.Fragment>
     )
   }

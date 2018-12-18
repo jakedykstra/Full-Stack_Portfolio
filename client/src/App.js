@@ -25,6 +25,9 @@ class App extends Component {
                 <Route exact path="/work" component={Work} />
                 <Route exact path="/contact" component={Contact} />
               </Switch>
+              <Route render={(props) => {
+                  console.log(props.location)
+                  return <Footer location={props.location}/> }} />
             </div>
           </BrowserRouter>
       </div>
