@@ -65,6 +65,13 @@ class Navbar extends Component {
                         Your browser is not supported!
                     </video>
                   </div>
+                  <div className="bg-video-reversed">                  
+                        <video className="bg-video__content" autoPlay muted loop>
+                        <source src={video} type="video/mp4" />
+                        <source src={video_image} type="video/webm" />
+                        Your browser is not supported!
+                    </video>
+                  </div>
                   <div className="background-box"/>
 
         </nav>
