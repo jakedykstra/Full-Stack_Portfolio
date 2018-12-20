@@ -27,7 +27,6 @@ class Footer extends Component {
     return (
         <footer className="footer">
         <div className="quote">{this.whichQuote()}</div>
-        <div className="empty"></div>
         <img className="signature" src={signature} alt="Jake's Signature"></img>
         </footer>
     );

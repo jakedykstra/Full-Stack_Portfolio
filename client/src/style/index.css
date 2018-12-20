@@ -17,6 +17,9 @@
   --line: 1px solid var(--color-grey-light-2);
 }
 
+/* html {
+  min-height: calc(100%);
+} */
 * {
   margin: 0;
   padding: 0;
@@ -29,15 +32,21 @@
 }
 
 body {
-  z-index: -2;
+  z-index: -10;
   font-size: 62.5%;
-  height: 100%;
+  min-height: 100%;
+  max-height: 100%;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   line-height: 1.6;
-    box-sizing: border-box;
+  box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f6f6f6c9;
+  /* background-image: url("./Golden_Gate_Traffic.jpg"); */
+  /* opacity: .08;  */
+
+  /* position: relative; */
 }
 
 #root {
@@ -67,7 +76,7 @@ code {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 /* Nav------------------------------------------------------------------------- */
@@ -115,13 +124,13 @@ code {
 .nav__user-nav--left {
   display: flex;
   justify-content: space-between;
-  width: 300px;
+  width: 360px;
 }
 
 .nav__user-nav--right {
   display: flex;
   justify-content: space-between;
-  width: 300px;
+  width: 360px;
 }
 
 .nav__logo {
@@ -142,7 +151,7 @@ code {
   }
 
   .nav__user-nav--left, .nav__user-nav--right {
-    width: 200px;
+    width: 280px;
     flex-basis: 1;
   }
 
@@ -154,7 +163,19 @@ code {
   } 
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 650px) {
+
+  .nav__user-nav--left, .nav__user-nav--right {
+    width: 230px;
+    flex-basis: 1;
+  }
+
+  .nav__user-nav a{
+    font-size: .75rem;
+  }
+}
+
+@media only screen and (max-width: 490px) {
   /* .nav__logo {
     top: 10%;
     left: 50%;
@@ -165,7 +186,7 @@ code {
   }
 
   .nav__user-nav--left, .nav__user-nav--right {
-    width: 150px;
+    width: 175px;
     flex-basis: 1;
   }
 
@@ -184,17 +205,28 @@ code {
 }
 
 .bg-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: -1;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-height: 100%;
+  min-width: 100%;
+  height: auto;
+  width: auto;
+  z-index: -5;
   opacity: .08; 
+  object-fit: cover;
+  background-attachment: fixed;
   overflow: hidden;
+  transform: translate(-50%, -50%);
+}
+
+.bg-video__content {
+  min-height: 100%;
+  object-fit: cover;
 }
 
 .bg-video-reversed {
+  display: none;
   position: absolute;
   top: 100%;
   z-index: -1;
@@ -203,12 +235,6 @@ code {
   height: 100%;
   width: 100%;
   transform: rotate(180deg);
-}
-
-.bg-video__content {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
 }
 
 /* 
@@ -282,7 +308,7 @@ Landing ---------------------------------------------------------- */
 .footer img {
   max-width: 10rem;
   object-fit: contain;
-  height: 80px;
+  height: 50px;
 }
 
 .empty {
@@ -291,7 +317,8 @@ Landing ---------------------------------------------------------- */
 }
 
 .signature {
-  margin: 2%;
+  margin-right: 2%;
+  margin-bottom: 1%;
 }
 
 .quote {
@@ -340,7 +367,7 @@ Landing ---------------------------------------------------------- */
   color: var(--color-secondary);
 }
 
-.card img {
+.card__contents img {
     display: block;
     width: 15rem;
     object-fit: contain;
@@ -365,7 +392,7 @@ Landing ---------------------------------------------------------- */
 }
 
 #card__bio--personal-bio {
-  font-size: .9rem;
+  font-size: .8rem;
   margin: 1rem 2rem;
 }
 
@@ -393,16 +420,34 @@ Landing ---------------------------------------------------------- */
    width: 4rem;
    transform: translate(-50%, -50%);
 }
+
+
+@media only screen and (max-width: 1000px) {
+  .card__contents {
+    font-size: .75rem;
+}
+.bg-video-reversed {
+  position: absolute;
+  top: 100%;
+  z-index: -1;
+  opacity: .08; 
+  overflow: hidden;
+  height: 25%;
+  width: 100%;
+  transform: rotate(180deg);
+}
+}
+
 @media only screen and (max-width: 800px) {
   .card__contents {
-    font-size: .9rem;
+    font-size: .7rem;
     flex-direction: column;
     width: 100%;
   }
 
-  .card img {
-    width: 50%;
-    margin-left: 25%;
+  .card__contents img {
+    width: 30%;
+    margin-left: 35%;
   }
 
   .about-blurb {
@@ -413,7 +458,7 @@ Landing ---------------------------------------------------------- */
 
 @media only screen and (max-width: 450px) {
   .card-bio {
-    font-size: .8rem;
+    font-size: .6rem;
     flex: column;
   }
 
@@ -618,10 +663,10 @@ Landing ---------------------------------------------------------- */
       .form__radio-group {
         display: flex;
         flex-direction: column;
-        height: 100%;
+        height: 50%;
       }
       .form__radio-label {
-        padding-left: 3rem;
+        padding-left: 3.5rem;
       }
 
       .radio {
@@ -633,7 +678,7 @@ Landing ---------------------------------------------------------- */
       } */
 
       .form__group button {
-        margin-top: 50%;
+        margin-top: 60%;
       }
 
       .form__input {
@@ -652,8 +697,14 @@ Landing ---------------------------------------------------------- */
           padding: .7rem 1rem;
         }
 
+        .form__radio-group {
+          padding-right: 6px;
+        }
+
         .form__group button {
-          width: 5rem;
+          width: 7rem;
+          font-size: .9rem;
+
         }
       }
 
@@ -666,10 +717,15 @@ Landing ---------------------------------------------------------- */
     margin-left: 5vw;
     display: flex;
     flex-direction: row;
-    font-size: 1rem;
+    font-size: .8rem;
     background-color: rgba(246, 246, 246, 0.805);
     border: var(--color-primary) 3px solid;
     color: var(--color-secondary);
+    min-height: 50vh;
+  }
+
+  .projects {
+    position: relative;
   }
 
   .projects__lists--box {
@@ -680,41 +736,13 @@ Landing ---------------------------------------------------------- */
   } 
 
 
-  @media only screen and (max-width: 700px) {
-    .card-project {
-      flex-direction: column;
-      /* height: 100vh; */
-      margin-top: 100px;
-      margin-bottom: 15%;
-      font-size: .8rem;
-    }
-    .projects__lists--box {
-      border-left: none;
-    } 
-
-    .with-arrow {
-      bottom: -320px;
-    }
-    .down-arrow {
-      bottom: -300px;
-    }
-
-    /* .projects__lists div:first-child {
-      border-top: var(--color-primary) 2px solid;
-    } */
-    
-}
 
   .projects__main {
     flex: 2 65%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-around;
     align-items: center;
-  }
-
-  .projects__main img {
-    padding-top: 11px;
   }
 
   @media only screen and (max-width: 900px) {
@@ -725,8 +753,9 @@ Landing ---------------------------------------------------------- */
 }
 
   .projects__main img {
-    max-height: 200px;
+    max-height: 315px;
     object-fit: contain;
+    padding: 8px 2px;
   }
 
   .projects__main--text {
@@ -754,10 +783,90 @@ Landing ---------------------------------------------------------- */
     animation: fill 10s ease-out;
   }
 
+  #clicked-active {
+    background-color: #00478A; 
+    color: white;
+  }
+
   @keyframes fill {
     from {background-color: inherit; }
     to {background-color: #00478A; color: white;}
   }
+
+
+  @media only screen and (max-width: 700px) {
+    .card-project {
+      flex-direction: column;
+      /* height: 100vh; */
+      margin-top: 50px;
+      margin-bottom: 15%;
+      font-size: .7rem;
+    }
+    .projects__lists--box {
+      border-left: none;
+    } 
+
+    .with-arrow {
+      bottom: -320px;
+    }
+    .down-arrow {
+      bottom: -300px;
+    }
+
+    /* .projects__lists div:first-child {
+      border-top: var(--color-primary) 2px solid;
+    } */
+     .projects__main img {
+    max-height: 250px;
+    object-fit: contain;
+    padding: 6px 2px;
+  }
+    
+}
+
+@media only screen and (max-width: 450px) {
+  .card-project {
+    margin-top: 50px;
+    font-size: .6rem;
+  }
+  .projects__lists--box {
+    border-left: none;
+  } 
+
+  .with-arrow {
+    bottom: -320px;
+  }
+  .down-arrow {
+    bottom: -300px;
+  }
+
+  /* .projects__lists div:first-child {
+    border-top: var(--color-primary) 2px solid;
+  } */
+   .projects__main img {
+  max-height: 200px;
+  object-fit: contain;
+  padding: 3px 1px;
+}
+  
+}
+@media only screen and (max-width: 370px) {
+  .card-project {
+    font-size: .55rem;
+  }
+  .with-arrow {
+    bottom: 20px;
+  }
+  .down-arrow {
+    bottom: -300px;
+  }
+   .projects__main img {
+  max-height: 160px;
+  object-fit: contain;
+  padding: 3px 1px;
+}
+  
+}
 
   /* languages ----------------------------------------------------- */
 

@@ -21,9 +21,9 @@ class Navbar extends Component {
   windowWidth = () => {
         console.log(window.innerWidth);
       if(window.innerWidth > 500) {
-            return "40";
+            return "45";
       } else {
-            return "68";
+            return "55";
       }
   }
 
@@ -42,6 +42,9 @@ class Navbar extends Component {
                           <span className={this.isActiveView("/bio")}>
                                 <Link to="/bio">About.</Link>
                           </span>
+                          <span className={this.isActiveView("/languages")}>
+                                <Link to="/languages">Languages.</Link>
+                          </span>
                         </div>
                         <div className="nav__user-nav--right">
                           <span>
@@ -51,7 +54,10 @@ class Navbar extends Component {
                                 <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/jacob-dykstra/">LinkedIn.</a>
                           </span>
                           <span>
-                          <a href={resume} target='_blank' rel="noopener noreferrer">Resume. </a>
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.UseCase.tech/">Blog.</a>
+                          </span>
+                          <span>
+                          <a href={resume} target='_blank' rel="noopener noreferrer">Resume.</a>
                           </span>
                         </div>
                   </nav>
@@ -66,11 +72,11 @@ class Navbar extends Component {
                     </video>
                   </div>
                   <div className="bg-video-reversed">                  
-                        <video className="bg-video__content" autoPlay muted loop>
-                        <source src={video} type="video/mp4" />
-                        <source src={video_image} type="video/webm" />
-                        Your browser is not supported!
-                    </video>
+                        <video className="bg-video__content" autoPlay muted playsinline loop>
+                              <source src={video} poster={video_image} type="video/mp4" />
+                              <source src={video_image} type="video/webm" />
+                              Your browser is not supported!
+                        </video>
                   </div>
                   <div className="background-box"/>
 
