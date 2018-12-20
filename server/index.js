@@ -1,5 +1,6 @@
 const express = require('express');
-// require('dotenv').config()
+const app = express();
+require('dotenv').config()
 // express doesn't know how to handle cookies, this helps
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
@@ -7,12 +8,14 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 // these are just require statements because we need to link them to the index.js but we don't need to use them in any of the code below
 
-const app = express();
+
 // all app.use are middlewares that get applied to our app before the route handlers, you can also place them elsewhere if you don't want all these middlewares being used between all routes handlers
 app.use(bodyParser.json());
 app.use(morgan('combined'));
 app.use(cors());
 // app.use(require('express-session')({ secret: "fur babies", resave: true, saveUninitialized: true }));
+
+require("./email.js")(app);
 
 if (process.env.NODE_ENV === 'production') {
   // Express will serve up production assets
@@ -25,5 +28,5 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 // whenever heroku runs our application it has the ability to inject envirnoment variables, which is herokus opportunity to send us runtime configs, this variable will run out application through heroku, however to run in dev envirnoment we need a local port (5000 here)
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5005;
 app.listen(PORT);

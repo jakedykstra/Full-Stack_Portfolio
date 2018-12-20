@@ -7,6 +7,7 @@ import Work from "./components/Work";
 import Bio from "./components/Bio";
 import Languages from "./components/Language";
 import Contact from "./components/Contact";
+// import "./setupProxy";
 
 class App extends Component {
   

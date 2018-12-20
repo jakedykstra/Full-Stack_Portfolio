@@ -90,7 +90,7 @@ class Work extends Component {
               </div>
               <div className="projects__lists--box" id={this.isActive("Crypto Market Simulator")} onClick={() => this.newProjectMain("Crypto Market Simulator")}>
               <div className="project-name"><strong>Crypto Market Simulator</strong></div>
-                <div className="project-languages"><em>React, Axios, Node, Sequelize, MySql, PassportJS, D3, Heroku</em></div>
+                <div className="project-languages"><em>React, Axios, Node, Sequelize/MySql, PassportJS, D3, TravisCI, Heroku</em></div>
               </div>
               <div className="projects__lists--box" id={this.isActive("Research Scraper")} onClick={() => this.newProjectMain("Research Scraper")}>
               <div className="project-name"><strong>Research Scraper</strong></div>
