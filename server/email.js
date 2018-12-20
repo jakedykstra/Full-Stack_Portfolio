@@ -54,7 +54,7 @@ app.post('/api/email', (req, res) => {
         from: 'Jacob Dykstra',
         to: email,
         subject: 'Expect a follow up shortly - Jacob Dykstra',
-        text: 'This is an automated message on behalf of Jacob Dykstra. Thank you for reaching out to me via my contact form on my site. I will follow up with you as soon as possible to discuss further details about' + reasonResp + '.\n\nBest, \nJacob Dykstra'
+        text: 'Dear ' + name + ', \n\nThis is an automated message on behalf of Jacob Dykstra. Thank you for reaching out to me via my contact form on my site. I will follow up with you as soon as possible to discuss further details about' + reasonResp + '.\n\nBest, \nJacob Dykstra'
     }
 
     // sending my message to client
