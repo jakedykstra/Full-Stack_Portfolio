@@ -79,7 +79,7 @@ class Work extends Component {
               <img src={this.projectImg()} alt="Screenshot of main project" className="screenshot"/>
               <div className="projects__main--text">
                 <div className="main-project-name"><strong>{this.state.mainProjectName}</strong> <a target="_blank" rel="noopener noreferrer" href={projectData[this.state.mainProjectName].link}>Github</a> {"   "}{this.isPage()}</div>
-                <div className="languages"><em>{projectData[this.state.mainProjectName].lang}</em></div>
+                {/* <div className="languages"><em>{projectData[this.state.mainProjectName].lang}</em></div> */}
                 <div className="description">{projectData[this.state.mainProjectName].desc}</div>
               </div>
             </div>
