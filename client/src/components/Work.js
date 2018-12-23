@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import downarrow from '../style/downarrow.png';
 import DayWonImg from "../style/images/DayWon.png";
 import projectData from "../util/projectData";
-// import crypMarkImg from "../style/images/CryptoMarketSim.png";
+import crypMarkImg from "../style/images/crypt.png";
+import chromeExtImg from "../style/images/Chrome_ext.png";
+import portImg from "../style/images/Port.png";
+import puppImg from "../style/images/pupp.png";
 
 class Work extends Component {
 
@@ -15,16 +17,14 @@ class Work extends Component {
     switch (this.state.mainProjectName) {
       case "DayWon":
         return DayWonImg;
-      // case "Crypto Market Simulator":
-      //   return crypMarkImg;
-        
+      case "Crypto Market Simulator":
+        return crypMarkImg;
       case "Research Scraper":
-      //   return ScraperImg;
-      // case "FlashCard Chrome Extension":
-      //   return FlashcardImg;
-      // case "Todos App":
-      //   return TodosImg;
-        break;
+        return puppImg;
+      case "FlashCard Chrome Extension":
+        return chromeExtImg;
+      case "DevByJake":
+        return portImg;
       default: 
         return null;
     }
