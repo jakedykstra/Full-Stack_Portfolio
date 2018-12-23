@@ -1,6 +1,55 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class Contact extends Component {
+
+  state = {
+      name: "",
+      email: "",
+      message: "",
+      project: "off",
+      hiring: "off"
+  }
+
+  handleChange = (inputElement, e) => {
+      console.log(this.state);
+      this.setState({
+          [inputElement]: e.value
+      })
+  }
+
+  handleButton = (type, e) => {
+    let notOn;
+    type === "hiring" ? notOn = "project" : notOn = "hiring"; 
+      this.setState({
+          [type]: e.target.value,
+          [notOn]: "off"
+      })
+  }
+
+  resetForm = () => {
+    this.setState ({
+        name: "",
+        email: "",
+        message: "",
+        project: "off",
+        hiring: "off"
+    })
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("sending");
+    axios.post("/api/email", this.state).then((response)=>{
+        if (response.data.msg === 'success'){
+            alert("Message Sent."); 
+            this.resetForm()
+        }else if(response.data.msg === 'fail'){
+            alert("Message failed to send.")
+        }
+    })
+  }
+
   render() {
     return (
               <React.Fragment>
@@ -13,19 +62,19 @@ class Contact extends Component {
                                 </div>
                             <div className="top-input">
                                 <div className="form__group first-input inputs-group">
-                                        <input type="text" className="form__input" placeholder="Full name" id="name" required />
+                                        <input onChange={(e) => this.handleChange("name", e.target)} type="text" className="form__input" placeholder="Full name" id="name" value={this.state.name} required />
                                         <label for="name" className="form__label">Full name</label>
                                     </div>
 
                                     <div className="form__group inputs-group">
-                                        <input type="email" className="form__input" placeholder="Email address" id="email" required />
+                                        <input onChange={(e) => this.handleChange("email", e.target)} type="email" className="form__input" placeholder="Email address" id="email" value={this.state.email} required />
                                         <label for="email" className="form__label">Email address</label>
                                     </div>
                             </div>
 
 
                                 <div className="form__group">
-                                    <textarea className="form__textarea" rows="4" placeholder="Reason for contact" required /> 
+                                    <textarea onChange={(e) => this.handleChange("message", e.target)}className="form__textarea" rows="4" placeholder="Reason for contact" value={this.state.message} required /> 
                                     <label for="message" className="form__label">Message</label>                       
                                 </div>
 
@@ -33,7 +82,7 @@ class Contact extends Component {
                                 <div className="radio">
                                     <div className="radio-buttons">
                                         <div className="form__radio-group">
-                                            <input type="radio" className="form__radio-input" id="small" name="size"/>
+                                            <input onChange={e => this.handleButton("hiring", e)} type="radio" className="form__radio-input" id="small" name="size" value={this.state.hiring} />
                                             <label for="small" className="form__radio-label">
                                                 <span className="form__radio-button"></span>
                                                 <b>Hiring.</b>
@@ -41,7 +90,7 @@ class Contact extends Component {
                                         </div>
 
                                         <div className="form__radio-group">
-                                            <input type="radio" className="form__radio-input" id="large" name="size"/>
+                                            <input onChange={e => this.handleButton("project", e)} type="radio" className="form__radio-input" id="large" name="size"/>
                                             <label for="large" className="form__radio-label">
                                                 <span className="form__radio-button"></span>
                                                 <b>Project.</b>
@@ -49,7 +98,7 @@ class Contact extends Component {
                                         </div>
                                     </div>
                                     <div className="form__group">
-                                    <button className="button"><b>Send. &rarr;</b></button>
+                                    <button onClick={this.handleSubmit} className="button"><b>Send. &rarr;</b></button>
                                     </div>
                                 </div>
 

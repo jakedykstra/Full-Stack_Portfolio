@@ -13,6 +13,8 @@ class Work extends Component {
     allProjects: ["DayWon", "Crypto Market Simulator", "Research Scraper", "FlashCard Chrome Extension", "DevByJake"]
   }
 
+  
+
   projectImg = () => {
     switch (this.state.mainProjectName) {
       case "DayWon":
@@ -31,7 +33,11 @@ class Work extends Component {
   }
     
   newProjectMain = (project) => {
-        return this.setState({mainProjectName: project})
+      clearInterval(this.projectSwitcher);
+      return this.setState({
+        mainProjectName: project,
+        clicked: project
+      })
     }
 
   languageClick = () => {
@@ -39,10 +45,12 @@ class Work extends Component {
   }
 
   isActive = (project) => {
-    if(this.state.mainProjectName === project) {
+    if((this.state.mainProjectName === project) && (this.state.mainProjectName !== this.state.clicked)) {
       return "active"
+    } else if ((this.state.mainProjectName === project) && (this.state.mainProjectName === this.state.clicked)){
+      return "clicked-active"
     } else {
-      return
+      return null;
     }
   }
 
@@ -53,7 +61,7 @@ class Work extends Component {
   }
 
   componentDidMount() {
-    setInterval(() => {
+    this.projectSwitcher = setInterval(() => {
       let next = (this.state.allProjects.indexOf(this.state.mainProjectName)) + 1;
       if(typeof(this.state.allProjects[next]) === "string") {
         next = this.state.allProjects[next]
@@ -61,17 +69,11 @@ class Work extends Component {
         next = this.state.allProjects[0];
       }
       this.setState({mainProjectName: next})
-    },10000)
+    },10000);
   }
 
   render() {
     return (
-      <React.Fragment>
-        <div>
-        <div className="arrow">
-          <h3 className="with-arrow">languages</h3>
-          <img onClick={this.languageClick} className="down-arrow" src={downarrow} alt="arrow pointing down"/>
-        </div>
         <div className="card-project">
             <div className="projects__main">
               <img src={this.projectImg()} alt="Screenshot of main project" className="screenshot"/>
@@ -88,7 +90,7 @@ class Work extends Component {
               </div>
               <div className="projects__lists--box" id={this.isActive("Crypto Market Simulator")} onClick={() => this.newProjectMain("Crypto Market Simulator")}>
               <div className="project-name"><strong>Crypto Market Simulator</strong></div>
-                <div className="project-languages"><em>React, Axios, Node, Sequelize, MySql, PassportJS, D3, Heroku</em></div>
+                <div className="project-languages"><em>React, Axios, Node, Sequelize/MySql, PassportJS, D3, TravisCI, Heroku</em></div>
               </div>
               <div className="projects__lists--box" id={this.isActive("Research Scraper")} onClick={() => this.newProjectMain("Research Scraper")}>
               <div className="project-name"><strong>Research Scraper</strong></div>
@@ -96,7 +98,7 @@ class Work extends Component {
               </div>
               <div className="projects__lists--box" id={this.isActive("FlashCard Chrome Extension")} onClick={() => this.newProjectMain("FlashCard Chrome Extension")}>
               <div className="project-name"><strong>FlashCard Chrome Extension</strong>(In Progress)</div>
-                <div className="project-languages"><em>React/Redux, Mongodb/Mongoose, Node/Express</em></div>
+                <div className="project-languages"><em>React/Apollo Client, GraphQL/Prisma/SQL, Node, TypeScript</em></div>
               </div>
               <div className="projects__lists--box" id={this.isActive("DevByJake")} onClick={() => this.newProjectMain("DevByJake")}>
               <div className="project-name"><strong>DevByJake</strong></div>
@@ -104,8 +106,6 @@ class Work extends Component {
               </div>
           </div>
         </div>
-        </div>
-      </React.Fragment>
     )
   }
 }

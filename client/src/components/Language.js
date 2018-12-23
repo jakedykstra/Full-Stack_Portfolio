@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import downarrow from '../style/downarrow.png';
-import firebase from "../style/firebase-icon.svg";
 
 class Languages extends Component {
 
