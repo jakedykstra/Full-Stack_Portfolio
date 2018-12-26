@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import DayWonImg from "../style/images/DayWon.png";
 import projectData from "../util/projectData";
-import crypMarkImg from "../style/images/crypt.png";
+import crypMarkImg from "../style/images/crypt.PNG";
 import chromeExtImg from "../style/images/Chrome_ext.png";
-import portImg from "../style/images/Port.png";
+import portImg from "../style/images/Port.PNG";
 import puppImg from "../style/images/pupp.png";
 
 class Work extends Component {
