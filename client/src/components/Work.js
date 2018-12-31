@@ -102,7 +102,7 @@ class Work extends Component {
               </div>
               <div className="projects__lists--box" id={this.isActive("DevByJake")} onClick={() => this.newProjectMain("DevByJake")}>
               <div className="project-name"><strong>DevByJake</strong></div>
-                <div className="project-languages"><em>React, NodeJS/Express, MongoDb, Emailer </em></div>
+                <div className="project-languages"><em>React, NodeJS/Express, MongoDb, NodeMailer </em></div>
               </div>
           </div>
         </div>
