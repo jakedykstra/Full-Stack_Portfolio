@@ -56,7 +56,7 @@ class Work extends Component {
 
   isPage = () => {
     if (projectData[this.state.mainProjectName].pageLink) {
-      return <a className="project-page-anchor" target="_blank" href="projectData[this.state.mainProjectName].pageLink">Project</a>
+      return <a className="project-page-anchor" target="_blank" href={projectData[this.state.mainProjectName].pageLink}>Project</a>
     }
   }
 
@@ -76,7 +76,7 @@ class Work extends Component {
     return (
         <div className="card-project">
             <div className="projects__main">
-              <img src={this.projectImg()} alt="Screenshot of main project" className="screenshot"/>
+              <img src={this.projectImg()} alt="Screenshot of main project" className="screenshot" target="_blank" rel="noopener noreferrer" href={projectData[this.state.mainProjectName].link}/>
               <div className="projects__main--text">
                 <div className="main-project-name"><strong>{this.state.mainProjectName}</strong> <a target="_blank" rel="noopener noreferrer" href={projectData[this.state.mainProjectName].link}>Github</a> {"   "}{this.isPage()}</div>
                 {/* <div className="languages"><em>{projectData[this.state.mainProjectName].lang}</em></div> */}
@@ -86,11 +86,11 @@ class Work extends Component {
             <div className="projects__lists">
               <div className="projects__lists--box" id={this.isActive("DayWon")} onClick={() => this.newProjectMain("DayWon")}>
                 <div className="project-name"><strong>DayWon</strong></div>
-                <div className="project-languages" data=""><em>React/Redux, MongoDb/Mongoose, Node/Express, React Native, PassportJS, D3</em></div>
+                <div className="project-languages" data=""><em>React/Redux, MongoDb/Mongoose, Node/Express, AUTH0, ChartsJS</em></div>
               </div>
               <div className="projects__lists--box" id={this.isActive("Crypto Market Simulator")} onClick={() => this.newProjectMain("Crypto Market Simulator")}>
               <div className="project-name"><strong>Crypto Market Simulator</strong></div>
-                <div className="project-languages"><em>React, Axios, Node, Sequelize/MySql, PassportJS, D3, TravisCI, Heroku</em></div>
+                <div className="project-languages"><em>React, Axios, Node, Sequelize/MySql, PassportJS, TravisCI, Heroku</em></div>
               </div>
               <div className="projects__lists--box" id={this.isActive("Research Scraper")} onClick={() => this.newProjectMain("Research Scraper")}>
               <div className="project-name"><strong>Research Scraper</strong></div>

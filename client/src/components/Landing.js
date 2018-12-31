@@ -7,7 +7,7 @@ class Landing extends Component {
       <React.Fragment>
         <div className="landing">
           <div className="header">
-            My NAMES JAKE AND I'M A JUNIOR FULL-STACK DEVELOPER
+            My NAMES JAKE AND I'M A FULL-STACK DEVELOPER
           </div>
           <div className="sub">
             Let's build something new.

@@ -15,13 +15,11 @@ const projectData = {
     desc: "Mobile application built to with functionalities including barbell calculators, workout powerlifts, todo accessory lifts, etc.",
     lang: "React/Redux, React Native, Axios, Node, MongoDb/Mongoose, Heroku",
     link: "https://github.com/jakedykstra/Juggernaut",
-    pageLink: "#"
   },
   "FlashCard Chrome Extension": {
     desc: "Google Chrome Extension for quickly saving web html into flashcard question/answer paths.",
     lang: "React/Redux, Mongodb/Mongoose, Node/Express",
     link: "https://github.com/jakedykstra/ChromeExtension_FlashcardBuilder",
-    pageLink: "#"
   },
   "Millenial Budget": {
     desc: "Web application for monitoring and inputting your budget spend. Millenial theme add in fun categories to help young adults realize how much concerts, etc. cost.",
@@ -33,8 +31,6 @@ const projectData = {
     desc: "Web scraper utilizing puppeteer to simulate user interaction and bypass tricky authentication. From there cheerio is used to scrape neccessary data then continue on. Array list of search queries is used for mass data gathering.",
     lang: "Puppeteer, CheerioJS, NodeJS/Express",
     link: "https://github.com/jakedykstra/Puppeteer_Cheerio",
-    pageLink: "#"
-  ,
 },
   "DevByJake": {
     desc: "Portfolio built to display my Front-End skills. I utilize a simple design and brief descriptions to keep messaging short and to the point. For further information please refer to GitHub or contact me.",
