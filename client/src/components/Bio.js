@@ -9,7 +9,7 @@ class Bio extends Component {
             <div className="card__contents">
             <img src={bio_pic} alt="Picture of Jake Dykstra"></img>
             <p className="about-blurb">
-            Coming from a background in account management at a top ad firm. With this unique skillset, I have strong knowledge of the client needs and the importance of developer functional clean code. I strive to build powerful applications that fulfill a user or business needs. <br /><br/><br/>
+            Developer utilizing todays top technologies to create clean functional code by deadline. Employing well regarded design patterns to distribute syntax that is not just usable, but readable in large team dynamics. Background in account management at renowned ad-firm BSSP. Unique agency skillset coupled with developer knowhow and strong work ethic to build real world applications that fulfill both B2B and B2C expectations. <br /><br/><br/>
             <b>Education.</b> <br/>
             - B.A. in Advertising at the CalState Fullerton <br/>
             - Certificate in Software Engineering from UC Davis <br/>
@@ -21,11 +21,10 @@ class Bio extends Component {
                 <li>Born and raised in the beautiful Windsor, CA.</li>
                 <li>Enjoyed hiking, camping, and anything sports growing up.</li>
                 <li>Board games and puzzles sound like a great way to spend my free time.</li>
+                <li>As a kid I wanted to be a Dragon Ball Z fighter when I grew up.</li>
                 <li>I entain myself with casual beer brewing and I aspire to be a woodworker when I have the time.</li>
-                <li>As a kid I wanted to be a DBZ fighter when I grew up</li>
-                <li>My goal a few years ago was to travel overseas... That is still my goal</li>
-                <li>I Worked for a michelin star restaurant where I learned there’s more to life than pizza and hamburgers. </li>
-                <li>I love to learn new things</li>
+                <li>I worked for a michelin star restaurant where I learned there’s more to life than pizza and hamburgers. </li>
+                <li>I love to learn new things and take on large challenges.</li>
               </ul>
         </div>
       </div>

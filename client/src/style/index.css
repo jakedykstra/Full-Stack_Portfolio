@@ -769,7 +769,10 @@ Landing ---------------------------------------------------------- */
     color: white;
   }
 
-
+  .projects__lists--box:hover {
+    background-color: slategrey; 
+    color: white;
+  }
 
   .projects__lists div:last-child {
     border-bottom:  none;
@@ -879,7 +882,11 @@ Landing ---------------------------------------------------------- */
   .languages__card {
     display: flex;
     flex-direction: row;
+    color: var(--color-secondary);
+  }
 
+  i {
+    color: var(--color-primary);
   }
 
   .languages__list {

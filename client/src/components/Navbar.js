@@ -54,7 +54,7 @@ class Navbar extends Component {
                                 <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/jacob-dykstra/">LinkedIn.</a>
                           </span>
                           <span>
-                                <a target="_blank" rel="noopener noreferrer" href="https://www.UseCase.tech/">Blog.</a>
+                                <a target="_blank" rel="noopener noreferrer" href="http://www.UseCase.tech/">Blog.</a>
                           </span>
                           <span>
                           <a href={resume} target='_blank' rel="noopener noreferrer">Resume.</a>
