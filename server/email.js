@@ -14,7 +14,7 @@ var transporter = nodemailer.createTransport(smtpTransport({
   console.log(process.env.UN);
   console.log(process.env.PASS);
 
-transporter.verify((error, success) => {
+ transporter.verify((error, success) => {
   if (error) {
     console.log(error);
   } else {
