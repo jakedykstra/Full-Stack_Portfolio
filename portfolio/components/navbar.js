@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
-import logo from '../style/Logo.png';
-import video from '../style/Golden_Gate_Traffic.mp4';
-import video_image from '../style/Golden_Gate_Traffic.jpg';
-import resume from "../style/resume.pdf";
+import Link from 'next/link'
+import { withRouter } from 'next/router'
+import logo from '../assets/Logo.png';
+// import video from '../assets/Golden_Gate_Traffic.mp4';
+import video_image from '../assets/Golden_Gate_Traffic.jpg';
+// import resume from "../assets/Jacob_Finch_Resume.pdf";
 
-class Navbar extends Component {
+export function Navbar({router}) {
 
       state = {
             clicked: false,
@@ -28,36 +29,43 @@ class Navbar extends Component {
   }
 
   render() {
-        console.log(this.props);
     return (
         <nav className="nav">
         <nav className="nav__user-nav">
                         <div className="nav__user-nav--left">
                           <span className={this.isActiveView("/work")}>
-                                <Link to="/work">Work.</Link>
+                                <Link href="/work">
+                                      <a>Work.</a>
+                                </Link>
                           </span>
                           <span className={this.isActiveView("/contact")}>
-                                <Link to="/contact">Contact.</Link>
+                                <Link href="/contact">
+                                      <a>Contact.</a>
+                                </Link>
                           </span>
                           <span className={this.isActiveView("/bio")}>
-                                <Link to="/bio">About.</Link>
+                                <Link href="/bio">
+                                      <a>About.</a>
+                                </Link>
                           </span>
                           <span className={this.isActiveView("/languages")}>
-                                <Link to="/languages">Languages.</Link>
+                                <Link href="/languages">
+                                      <a>Languages.</a>
+                                </Link>
                           </span>
                         </div>
                         <div className="nav__user-nav--right">
                           <span>
-                                <a target="_blank" rel="noopener noreferrer" href="https://github.com/jakedykstra">Github.</a>
+                                <a target="_blank" rel="noopener noreferrer" href="https://github.com/jacobdavidfinch">Github.</a>
                           </span>
                           <span>
-                                <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/jacob-dykstra/">LinkedIn.</a>
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/jacob-finch/">LinkedIn.</a>
                           </span>
                           <span>
                                 <a target="_blank" rel="noopener noreferrer" href="http://www.UseCase.tech/">Blog.</a>
                           </span>
                           <span>
-                          <a href={resume} target='_blank' rel="noopener noreferrer">Resume.</a>
+                          {/* <a href={resume} target='_blank' rel="noopener noreferrer">Resume.</a> */}
                           </span>
                         </div>
                   </nav>
@@ -65,18 +73,18 @@ class Navbar extends Component {
                         <Link to="/"><img src={logo} alt="DevByJake Logo" height={this.windowWidth()}></img></Link>
                   </div>
                   <div className="bg-video">                  
-                        <video className="bg-video__content" autoPlay muted loop>
+                        {/* <video className="bg-video__content" autoPlay muted loop>
                         <source src={video} type="video/mp4" />
                         <source src={video_image} type="video/webm" />
                         Your browser is not supported!
-                    </video>
+                    </video> */}
                   </div>
                   <div className="bg-video-reversed">                  
-                        <video className="bg-video__content" autoPlay muted playsinline loop>
+                        {/* <video className="bg-video__content" autoPlay muted playsinline loop>
                               <source src={video} poster={video_image} type="video/mp4" />
                               <source src={video_image} type="video/webm" />
                               Your browser is not supported!
-                        </video>
+                        </video> */}
                   </div>
                   <div className="background-box"/>
 
@@ -84,5 +92,3 @@ class Navbar extends Component {
     );
   }
 }
-
-export default Navbar;

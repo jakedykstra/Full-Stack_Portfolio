@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
-import signature from '../style/Signature.png'
-import { history } from 'react-router-dom';
+import signature from '../assets/Signature.png'
 
-class Footer extends Component {
-
+export class Footer extends Component {
   whichQuote = () => {
     switch (this.props.location.pathname) {
       case "/bio":
@@ -27,11 +24,9 @@ class Footer extends Component {
   render() {
     return (
         <footer className="footer">
-        <div className="quote">{this.whichQuote()}</div>
-        <img className="signature" src={signature} alt="Jake's Signature"></img>
+          <div className="quote">{this.whichQuote()}</div>
+          <img className="signature" src={signature} alt="Jake's Signature"></img>
         </footer>
     );
   }
 }
-
-export default Footer;

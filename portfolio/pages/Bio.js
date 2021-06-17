@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import bio_pic from "../style/jake_greyscale.jpg";
+import bio_pic from "../assets/jake_greyscale.jpg";
 
 class Bio extends Component {
   render() {

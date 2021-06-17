@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import downarrow from '../style/downarrow.png';
+import downarrow from '../assets/downarrow.png';
 
 class Languages extends Component {
 
